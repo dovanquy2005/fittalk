@@ -2,7 +2,7 @@ Dưới đây là phiên bản rút gọn của README, **chỉ bao gồm giới
 
 ---
 
-# 💪 FitTalk – Mạng xã hội thể hình và sức khoẻ
+# FitTalk – Mạng xã hội thể hình và sức khoẻ
 
 **FitTalk** là một nền tảng mạng xã hội tập trung vào cộng đồng yêu thích **sức khoẻ, thể hình, chế độ ăn uống và lối sống lành mạnh**.
 Dự án được phát triển bởi **Đỗ Văn Quý** với định hướng UI/UX hiện đại, tương tác mượt mà, dễ dùng trên cả desktop lẫn mobile.
