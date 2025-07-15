@@ -21,5 +21,3 @@ FitTalk được xây dựng với các công nghệ hiện đại:
 * 📦 **Lucide Icons** – Bộ icon nhẹ, dễ dùng
 
 ---
-
-Nếu bạn muốn mình tạo file `README.md` từ nội dung này hoặc push lên GitHub, chỉ cần nói nhé.
