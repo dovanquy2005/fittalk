@@ -1,6 +1,3 @@
-Dưới đây là phiên bản rút gọn của README, **chỉ bao gồm giới thiệu về FitTalk và công nghệ sử dụng**, như bạn yêu cầu:
-
----
 
 # FitTalk – Mạng xã hội thể hình và sức khoẻ
 
