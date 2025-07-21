@@ -21,11 +21,11 @@ import Workout from "./pages/Workout";
 import Achievements from "./pages/Achievements";
 import Health from "./pages/Health";
 import Nutrition from "./pages/Nutrition";
-
+import { Meals } from "./components/meals/Meals";
 import { ProfilePage } from "@/components/profile/ProfilePage";
-import { SettingsLayout as SettingsPage } from "@/components/settings/SettingsLayout";
-import { MessagesPage } from "@/components/messages/MessagesPage";
-
+// import { SettingsLayout as SettingsPage } from "@/components/settings/SettingsLayout";
+import { Settings } from "@/components/settings/Settings";
+import { Messages } from "@/components/messages/Messages";
 
 import { Login } from "@/components/auth/Login";
 import { Register } from "@/components/auth/Register";
@@ -59,11 +59,15 @@ const App = () => (
               <Route path="/workout" element={<Workout />} />
               <Route path="/achievements" element={<Achievements />} />
               <Route path="/health" element={<Health />} />
-              <Route path="/nutrition" element={<Nutrition />} />
+              {/* meals và nutrition ở đây là một */}
+              <Route path="/meals" element={<Meals />} />       
+              <Route path="/nutrition" element={<Nutrition />} /> 
 
-              <Route path="/messages" element={<MessagesPage />} />
+              <Route path="/messages" element={<Messages />} />
               <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/settings" element={<SettingsPage />} />
+              <Route path="/settings" element={<Settings />} />
+              {/* <Route path="/settings" element={<SettingsPage />} /> */}
+
 
               <Route path="*" element={<NotFound />} />
             </Routes>

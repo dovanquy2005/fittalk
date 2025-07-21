@@ -24,12 +24,12 @@ const navigationItems = [
   { icon: Users, label: "Cộng đồng", to: "/communities" },
   { icon: MessageSquare, label: "Tin nhắn", to: "/messages", badge: "3" },
   { icon: Bookmark, label: "Đã lưu", to: "/saved" },
-  { icon: TrendingUp, label: "Xu hướng", to: "/trending" }
+  // { icon: TrendingUp, label: "Xu hướng", to: "/trending" }
 ];
 
 const fitnessItems = [
   { icon: Target, label: "Mục tiêu", to: "/goals" },
-  { icon: Calendar, label: "Lịch tập", to: "/workouts" },
+  { icon: Calendar, label: "Lịch tập", to: "/workout" },
   { icon: Utensils, label: "dinh dưỡng", to: "/nutrition" }, 
   { icon: Trophy, label: "Thành tích", to: "/achievements" },
   { icon: Heart, label: "Sức khỏe", to: "/health" }

@@ -7,7 +7,7 @@ import { useMessenger } from "./MessengerContext";
 
 const mockChats = [
   {
-    name: "NP Thanh Tuấn",
+    name: "NP Thanh Tuấnnn",
     message: "ok",
     time: "1 giờ",
     avatar: "/images/profile-1.jpg",

@@ -8,8 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-// import { Header } from "@/components/layout/Header";
-// import { Sidebar } from "@/components/layout/Sidebar";
+import { Header } from "@/components/layout/Header";
+import { Sidebar } from "@/components/layout/Sidebar";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 
 const mockMeals = [
@@ -105,7 +105,7 @@ const mealPlans = [
   }
 ];
 
-const Nutrition = () => {
+export const Meals = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showAddMeal, setShowAddMeal] = useState(false);
@@ -118,9 +118,9 @@ const Nutrition = () => {
 
   return (
     <div className="min-h-screen bg-background">
-  
+      <Header />
       <div className="flex">
-    
+        <Sidebar />
         <main className="flex-1 p-6 lg:p-8">
           <div className="space-y-6">
             {/* Header */}
@@ -325,4 +325,3 @@ const Nutrition = () => {
   );
 };
 
-export default Nutrition;

@@ -119,9 +119,9 @@ export const PostCard = ({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>Follow {author.name}</DropdownMenuItem>
-            <DropdownMenuItem>Report post</DropdownMenuItem>
-            <DropdownMenuItem>Hide post</DropdownMenuItem>
+            <DropdownMenuItem>Theo dõi {author.name}</DropdownMenuItem>
+            <DropdownMenuItem>Báo cáo bài viết</DropdownMenuItem>
+            <DropdownMenuItem>Ẩn bài viết</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

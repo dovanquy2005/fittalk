@@ -168,3 +168,6 @@ All colors MUST be HSL.
   background-color: rgba(100, 100, 100, 0.4);
   border-radius: 4px;
 }
+.lovable-badge {
+    display: none !important;
+}

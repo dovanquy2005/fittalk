@@ -6,7 +6,6 @@ import { TrendingTopics } from "@/components/trending/TrendingTopics";
 import { WelcomeFlow } from "@/components/onboarding/WelcomeFlow";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { ProfilePage } from "@/components/profile/ProfilePage";
-import { SettingsPage } from "@/components/settings/SettingsPage";
 
 const Index = () => {
   const [showOnboarding, setShowOnboarding] = useState(true);
