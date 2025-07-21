@@ -11,125 +11,125 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const mockWorkouts = [
   {
     id: 1,
-    title: "Full Body HIIT Blast",
-    description: "High-intensity interval training targeting all major muscle groups for maximum calorie burn",
+    title: "HIIT Toàn Thân Đốt Mỡ",
+    description: "Bài tập cường độ cao ngắt quãng (HIIT) tác động vào tất cả các nhóm cơ chính để đốt cháy calo tối đa",
     instructor: "Sarah Johnson",
     instructorAvatar: "/placeholder.svg",
     duration: 30,
-    difficulty: "Intermediate",
-    bodyPart: "Full Body",
-    equipment: "None",
+    difficulty: "Trung cấp",
+    bodyPart: "Toàn thân",
+    equipment: "Không dụng cụ",
     calories: 350,
     rating: 4.8,
     reviews: 1234,
     thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
     isPremium: false,
-    tags: ["HIIT", "No Equipment", "Fat Burn"],
+    tags: ["HIIT", "Không dụng cụ", "Đốt mỡ"],
     completions: 15678
   },
   {
     id: 2,
-    title: "Upper Body Strength Builder",
-    description: "Build lean muscle in your arms, chest, and back with this comprehensive strength workout",
+    title: "Xây Dựng Sức Mạnh Thân Trên",
+    description: "Xây dựng cơ bắp săn chắc ở tay, ngực và lưng với bài tập sức mạnh toàn diện này",
     instructor: "Mike Chen",
     instructorAvatar: "/placeholder.svg",
     duration: 45,
-    difficulty: "Advanced",
-    bodyPart: "Upper Body",
-    equipment: "Dumbbells",
+    difficulty: "Nâng cao",
+    bodyPart: "Thân trên",
+    equipment: "Tạ đơn",
     calories: 280,
     rating: 4.9,
     reviews: 856,
     thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400",
     isPremium: true,
-    tags: ["Strength", "Muscle Building", "Dumbbells"],
+    tags: ["Sức mạnh", "Xây dựng cơ bắp", "Tạ đơn"],
     completions: 9234
   },
   {
     id: 3,
-    title: "Morning Yoga Flow",
-    description: "Gentle yoga sequence to wake up your body and mind with mindful movement",
+    title: "Yoga Chào Buổi Sáng",
+    description: "Chuỗi động tác yoga nhẹ nhàng để đánh thức cơ thể và tâm trí của bạn bằng chuyển động chánh niệm",
     instructor: "Emma Wilson",
     instructorAvatar: "/placeholder.svg",
     duration: 20,
-    difficulty: "Beginner",
-    bodyPart: "Full Body",
-    equipment: "Yoga Mat",
+    difficulty: "Cơ bản",
+    bodyPart: "Toàn thân",
+    equipment: "Thảm Yoga",
     calories: 120,
     rating: 4.7,
     reviews: 2341,
     thumbnail: "https://images.unsplash.com/photo-1506629905607-61b21050e5e9?w=400",
     isPremium: false,
-    tags: ["Yoga", "Flexibility", "Morning"],
+    tags: ["Yoga", "Linh hoạt", "Buổi sáng"],
     completions: 18456
   },
   {
     id: 4,
-    title: "Cardio Dance Party",
-    description: "Fun and energetic dance workout that'll get your heart pumping and body moving",
+    title: "Tiệc Nhảy Cardio",
+    description: "Bài tập nhảy vui nhộn và tràn đầy năng lượng sẽ khiến tim bạn đập nhanh và cơ thể chuyển động",
     instructor: "Lisa Rodriguez",
     instructorAvatar: "/placeholder.svg",
     duration: 35,
-    difficulty: "Intermediate",
-    bodyPart: "Full Body",
-    equipment: "None",
+    difficulty: "Trung cấp",
+    bodyPart: "Toàn thân",
+    equipment: "Không dụng cụ",
     calories: 420,
     rating: 4.6,
     reviews: 1567,
     thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
     isPremium: false,
-    tags: ["Dance", "Cardio", "Fun"],
+    tags: ["Nhảy", "Cardio", "Vui nhộn"],
     completions: 12789
   },
   {
     id: 5,
-    title: "Core Crusher Challenge",
-    description: "Intense core workout to build a strong, stable midsection in just 15 minutes",
+    title: "Thử Thách Cơ Bụng",
+    description: "Bài tập cơ bụng cường độ cao để xây dựng một vùng trung tâm khỏe mạnh, ổn định chỉ trong 15 phút",
     instructor: "Alex Thompson",
     instructorAvatar: "/placeholder.svg",
     duration: 15,
-    difficulty: "Advanced",
+    difficulty: "Nâng cao",
     bodyPart: "Core",
-    equipment: "None",
+    equipment: "Không dụng cụ",
     calories: 180,
     rating: 4.8,
     reviews: 934,
     thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
     isPremium: true,
-    tags: ["Core", "Abs", "Quick"],
+    tags: ["Core", "Bụng", "Nhanh"],
     completions: 7823
   },
   {
     id: 6,
-    title: "Lower Body Power",
-    description: "Strengthen and tone your legs and glutes with this challenging lower body workout",
+    title: "Sức Mạnh Thân Dưới",
+    description: "Tăng cường và làm săn chắc chân và mông của bạn với bài tập thân dưới đầy thử thách này",
     instructor: "Jamie Martinez",
     instructorAvatar: "/placeholder.svg",
     duration: 40,
-    difficulty: "Intermediate",
-    bodyPart: "Lower Body",
-    equipment: "Resistance Bands",
+    difficulty: "Trung cấp",
+    bodyPart: "Thân dưới",
+    equipment: "Dây kháng lực",
     calories: 310,
     rating: 4.7,
     reviews: 1123,
     thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400",
     isPremium: false,
-    tags: ["Lower Body", "Legs", "Glutes"],
+    tags: ["Thân dưới", "Chân", "Mông"],
     completions: 10456
   }
 ];
 
-const bodyParts = ["All", "Full Body", "Upper Body", "Lower Body", "Core"];
-const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
-const durations = ["All", "Under 20 min", "20-40 min", "40+ min"];
-const equipment = ["All", "None", "Dumbbells", "Resistance Bands", "Yoga Mat"];
+const bodyParts = ["Tất cả", "Toàn thân", "Thân trên", "Thân dưới", "Core"];
+const difficulties = ["Tất cả", "Cơ bản", "Trung cấp", "Nâng cao"];
+const durations = ["Tất cả", "Dưới 20 phút", "20-40 phút", "Trên 40 phút"];
+const equipment = ["Tất cả", "Không dụng cụ", "Tạ đơn", "Dây kháng lực", "Thảm Yoga"];
 
 export const Workout = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [bodyPartFilter, setBodyPartFilter] = useState("All");
-  const [difficultyFilter, setDifficultyFilter] = useState("All");
-  const [durationFilter, setDurationFilter] = useState("All");
-  const [equipmentFilter, setEquipmentFilter] = useState("All");
+  const [bodyPartFilter, setBodyPartFilter] = useState("Tất cả");
+  const [difficultyFilter, setDifficultyFilter] = useState("Tất cả");
+  const [durationFilter, setDurationFilter] = useState("Tất cả");
+  const [equipmentFilter, setEquipmentFilter] = useState("Tất cả");
   const [savedWorkouts, setSavedWorkouts] = useState<number[]>([]);
   const [likedWorkouts, setLikedWorkouts] = useState<number[]>([]);
 
@@ -154,11 +154,11 @@ export const Workout = () => {
                          workout.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          workout.instructor.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesBodyPart = bodyPartFilter === "All" || workout.bodyPart === bodyPartFilter;
-    const matchesDifficulty = difficultyFilter === "All" || workout.difficulty === difficultyFilter;
-    const matchesEquipment = equipmentFilter === "All" || workout.equipment === equipmentFilter;
+    const matchesBodyPart = bodyPartFilter === "Tất cả" || workout.bodyPart === bodyPartFilter;
+    const matchesDifficulty = difficultyFilter === "Tất cả" || workout.difficulty === difficultyFilter;
+    const matchesEquipment = equipmentFilter === "Tất cả" || workout.equipment === equipmentFilter;
     
-    const matchesDuration = durationFilter === "All" || 
+    const matchesDuration = durationFilter === "Tất cả" || 
       (durationFilter === "Under 20 min" && workout.duration < 20) ||
       (durationFilter === "20-40 min" && workout.duration >= 20 && workout.duration <= 40) ||
       (durationFilter === "40+ min" && workout.duration > 40);
@@ -168,9 +168,9 @@ export const Workout = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Beginner": return "bg-success text-white";
-      case "Intermediate": return "bg-warning text-black";
-      case "Advanced": return "bg-destructive text-white";
+      case "Cơ bản": return "bg-success text-white";
+      case "Trung cấp": return "bg-warning text-black";
+      case "Nâng cao": return "bg-destructive text-white";
       default: return "bg-muted";
     }
   };
@@ -180,9 +180,9 @@ export const Workout = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Workouts</h1>
+          <h1 className="text-3xl font-bold mb-2">Bài tập</h1>
           <p className="text-muted-foreground">
-            Find the perfect workout for your fitness goals and schedule
+            Tìm bài tập hoàn hảo cho mục tiêu và lịch trình của bạn
           </p>
         </div>
 
@@ -191,7 +191,7 @@ export const Workout = () => {
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search workouts, instructors, or exercises..."
+              placeholder="Tìm bài tập, huấn luyện viên, hoặc động tác..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -201,7 +201,7 @@ export const Workout = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4">
             <Select value={bodyPartFilter} onValueChange={setBodyPartFilter}>
               <SelectTrigger>
-                <SelectValue placeholder="Body Part" />
+                <SelectValue placeholder="Nhóm cơ" />
               </SelectTrigger>
               <SelectContent>
                 {bodyParts.map(part => (
@@ -212,7 +212,7 @@ export const Workout = () => {
 
             <Select value={difficultyFilter} onValueChange={setDifficultyFilter}>
               <SelectTrigger>
-                <SelectValue placeholder="Difficulty" />
+                <SelectValue placeholder="Độ khó" />
               </SelectTrigger>
               <SelectContent>
                 {difficulties.map(diff => (
@@ -223,7 +223,7 @@ export const Workout = () => {
 
             <Select value={durationFilter} onValueChange={setDurationFilter}>
               <SelectTrigger>
-                <SelectValue placeholder="Duration" />
+                <SelectValue placeholder="Thời lượng" />
               </SelectTrigger>
               <SelectContent>
                 {durations.map(duration => (
@@ -234,7 +234,7 @@ export const Workout = () => {
 
             <Select value={equipmentFilter} onValueChange={setEquipmentFilter}>
               <SelectTrigger>
-                <SelectValue placeholder="Equipment" />
+                <SelectValue placeholder="Dụng cụ" />
               </SelectTrigger>
               <SelectContent>
                 {equipment.map(eq => (
@@ -246,14 +246,14 @@ export const Workout = () => {
             <Button 
               variant="outline" 
               onClick={() => {
-                setBodyPartFilter("All");
-                setDifficultyFilter("All");
-                setDurationFilter("All");
-                setEquipmentFilter("All");
+                setBodyPartFilter("Tất cả");
+                setDifficultyFilter("Tất cả");
+                setDurationFilter("Tất cả");
+                setEquipmentFilter("Tất cả");
                 setSearchTerm("");
               }}
             >
-              Clear Filters
+              Xóa bộ lọc
             </Button>
           </div>
         </div>
@@ -261,7 +261,7 @@ export const Workout = () => {
         {/* Results Count */}
         <div className="mb-6">
           <p className="text-sm text-muted-foreground">
-            Showing {filteredWorkouts.length} of {mockWorkouts.length} workouts
+            Hiển thị {filteredWorkouts.length} trên {mockWorkouts.length} bài tập
           </p>
         </div>
 
@@ -282,20 +282,20 @@ export const Workout = () => {
         ) : (
           <Card className="p-8 text-center">
             <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Workouts Found</h3>
+            <h3 className="text-lg font-semibold mb-2">Không tìm thấy bài tập</h3>
             <p className="text-muted-foreground mb-4">
-              Try adjusting your search criteria or browse all workouts
+              Hãy thử điều chỉnh tiêu chí tìm kiếm hoặc duyệt tất cả các bài tập
             </p>
             <Button 
               onClick={() => {
-                setBodyPartFilter("All");
-                setDifficultyFilter("All");
-                setDurationFilter("All");
-                setEquipmentFilter("All");
+                setBodyPartFilter("Tất cả");
+                setDifficultyFilter("Tất cả");
+                setDurationFilter("Tất cả");
+                setEquipmentFilter("Tất cả");
                 setSearchTerm("");
               }}
             >
-              Show All Workouts
+              Hiển thị tất cả bài tập
             </Button>
           </Card>
         )}
@@ -315,9 +315,9 @@ interface WorkoutCardProps {
 const WorkoutCard = ({ workout, isSaved, isLiked, onSave, onLike }: WorkoutCardProps) => {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Beginner": return "bg-success text-white";
-      case "Intermediate": return "bg-warning text-black";
-      case "Advanced": return "bg-destructive text-white";
+      case "Cơ bản": return "bg-success text-white";
+      case "Trung cấp": return "bg-warning text-black";
+      case "Nâng cao": return "bg-destructive text-white";
       default: return "bg-muted";
     }
   };
@@ -334,8 +334,8 @@ const WorkoutCard = ({ workout, isSaved, isLiked, onSave, onLike }: WorkoutCardP
           {/* Premium Badge */}
           {workout.isPremium && (
             <div className="absolute top-3 left-3">
-              <Badge className="bg-accent text-black">
-                ⭐ Premium
+              <Badge className="bg-accent text-black font-semibold">
+                ⭐ Cao cấp
               </Badge>
             </div>
           )}
@@ -344,7 +344,7 @@ const WorkoutCard = ({ workout, isSaved, isLiked, onSave, onLike }: WorkoutCardP
           <div className="absolute top-3 right-3">
             <Badge className="bg-black/50 text-white">
               <Clock className="h-3 w-3 mr-1" />
-              {workout.duration} min
+              {workout.duration} phút
             </Badge>
           </div>
 
@@ -417,27 +417,27 @@ const WorkoutCard = ({ workout, isSaved, isLiked, onSave, onLike }: WorkoutCardP
               <Zap className="h-4 w-4" />
               <span>{workout.calories}</span>
             </div>
-            <p className="text-xs text-muted-foreground">Calories</p>
+            <p className="text-xs text-muted-foreground">Calo</p>
           </div>
           <div>
             <div className="flex items-center justify-center space-x-1 text-sm text-muted-foreground">
               <Star className="h-4 w-4 text-yellow-400 fill-current" />
               <span>{workout.rating}</span>
             </div>
-            <p className="text-xs text-muted-foreground">{workout.reviews} reviews</p>
+            <p className="text-xs text-muted-foreground">{workout.reviews} đánh giá</p>
           </div>
           <div>
             <div className="flex items-center justify-center space-x-1 text-sm text-muted-foreground">
               <Users className="h-4 w-4" />
               <span>{(workout.completions / 1000).toFixed(1)}k</span>
             </div>
-            <p className="text-xs text-muted-foreground">Completed</p>
+            <p className="text-xs text-muted-foreground">Hoàn thành</p>
           </div>
         </div>
 
         {/* Equipment */}
         <div className="text-center">
-          <p className="text-xs text-muted-foreground">Equipment: {workout.equipment}</p>
+          <p className="text-xs text-muted-foreground">Dụng cụ: {workout.equipment}</p>
         </div>
 
         {/* Tags */}
@@ -451,7 +451,7 @@ const WorkoutCard = ({ workout, isSaved, isLiked, onSave, onLike }: WorkoutCardP
 
         {/* Start Button */}
         <Button className="w-full bg-gradient-primary text-white hover:opacity-90">
-          Start Workout
+          Bắt đầu tập
         </Button>
       </CardContent>
     </Card>

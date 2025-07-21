@@ -13,12 +13,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const mockGoals = [
   {
     id: 1,
-    title: "Lose 15 pounds",
-    description: "Reach my target weight for summer",
-    category: "Weight Loss",
-    targetValue: 15,
-    currentValue: 8,
-    unit: "lbs",
+    title: "Giảm 7kg",
+    description: "Đạt được cân nặng mục tiêu cho mùa hè",
+    category: "Giảm cân",
+    targetValue: 7,
+    currentValue: 4,
+    unit: "kg",
     deadline: "2024-06-01",
     priority: "high",
     status: "active",
@@ -26,12 +26,12 @@ const mockGoals = [
   },
   {
     id: 2,
-    title: "Run a 5K under 25 minutes",
-    description: "Improve my running speed and endurance",
+    title: "Chạy 5K dưới 25 phút",
+    description: "Cải thiện tốc độ chạy và sức bền của tôi",
     category: "Cardio",
     targetValue: 25,
     currentValue: 28,
-    unit: "min",
+    unit: "phút",
     deadline: "2024-04-15",
     priority: "medium",
     status: "active",
@@ -39,12 +39,12 @@ const mockGoals = [
   },
   {
     id: 3,
-    title: "Bench press 200 lbs",
-    description: "Increase my upper body strength",
-    category: "Strength",
-    targetValue: 200,
-    currentValue: 175,
-    unit: "lbs",
+    title: "Đẩy ngực 90kg",
+    description: "Tăng sức mạnh thân trên",
+    category: "Sức mạnh",
+    targetValue: 90,
+    currentValue: 80,
+    unit: "kg",
     deadline: "2024-08-01",
     priority: "high",
     status: "active",
@@ -52,12 +52,12 @@ const mockGoals = [
   },
   {
     id: 4,
-    title: "Practice yoga 4 times per week",
-    description: "Improve flexibility and mindfulness",
-    category: "Flexibility",
+    title: "Tập yoga 4 lần/tuần",
+    description: "Cải thiện sự linh hoạt và chánh niệm",
+    category: "Linh hoạt",
     targetValue: 4,
     currentValue: 3,
-    unit: "times/week",
+    unit: "lần/tuần",
     deadline: "2024-12-31",
     priority: "low",
     status: "active",
@@ -65,21 +65,31 @@ const mockGoals = [
   },
   {
     id: 5,
-    title: "Complete a half marathon",
-    description: "Finish my first 13.1 mile race",
+    title: "Hoàn thành bán marathon",
+    description: "Hoàn thành cuộc đua 21km đầu tiên của tôi",
     category: "Cardio",
     targetValue: 1,
     currentValue: 1,
-    unit: "race",
+    unit: "cuộc đua",
     deadline: "2024-03-15",
     priority: "high",
-    status: "completed",
+    status: "completed", // Giữ nguyên để logic hoạt động, sẽ dịch ở UI
     createdDate: "2023-11-01"
   }
 ];
 
-const categories = ["Weight Loss", "Strength", "Cardio", "Flexibility", "Nutrition", "Other"];
+const categories = ["Giảm cân", "Sức mạnh", "Cardio", "Linh hoạt", "Dinh dưỡng", "Khác"];
 const priorities = ["low", "medium", "high"];
+const priorityTranslations: { [key: string]: string } = {
+  low: "Thấp",
+  medium: "Trung bình",
+  high: "Cao"
+};
+const statusFilters = [
+  { id: "active", label: "Đang thực hiện" },
+  { id: "completed", label: "Đã hoàn thành" },
+  { id: "all", label: "Tất cả" }
+];
 
 export const MyGoals = () => {
   const [goals, setGoals] = useState(mockGoals);
@@ -173,50 +183,50 @@ export const MyGoals = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
           <div>
-            <h1 className="text-3xl font-bold mb-2">My Goals</h1>
+            <h1 className="text-3xl font-bold mb-2">Mục tiêu của tôi</h1>
             <p className="text-muted-foreground">
-              Track your fitness journey and celebrate your achievements
+              Theo dõi hành trình thể chất và ăn mừng thành tích của bạn
             </p>
           </div>
           <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
             <DialogTrigger asChild>
               <Button className="bg-gradient-primary text-white">
                 <Plus className="h-4 w-4 mr-2" />
-                Add Goal
+                Thêm mục tiêu
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>Add New Goal</DialogTitle>
+                <DialogTitle>Thêm mục tiêu mới</DialogTitle>
                 <DialogDescription>
-                  Set a specific, measurable fitness goal to track your progress.
+                  Đặt một mục tiêu thể chất cụ thể, có thể đo lường để theo dõi tiến trình của bạn.
                 </DialogDescription>
               </DialogHeader>
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="title">Goal Title</Label>
+                  <Label htmlFor="title">Tên mục tiêu</Label>
                   <Input
                     id="title"
                     value={newGoal.title}
                     onChange={(e) => setNewGoal(prev => ({ ...prev, title: e.target.value }))}
-                    placeholder="e.g., Lose 10 pounds"
+                    placeholder="ví dụ: Giảm 5kg"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="description">Description</Label>
+                  <Label htmlFor="description">Mô tả</Label>
                   <Textarea
                     id="description"
                     value={newGoal.description}
                     onChange={(e) => setNewGoal(prev => ({ ...prev, description: e.target.value }))}
-                    placeholder="Describe your goal in detail..."
+                    placeholder="Mô tả chi tiết mục tiêu của bạn..."
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="category">Category</Label>
+                    <Label htmlFor="category">Danh mục</Label>
                     <Select onValueChange={(value) => setNewGoal(prev => ({ ...prev, category: value }))}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select category" />
+                        <SelectValue placeholder="Chọn danh mục" />
                       </SelectTrigger>
                       <SelectContent>
                         {categories.map(cat => (
@@ -226,15 +236,15 @@ export const MyGoals = () => {
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="priority">Priority</Label>
+                    <Label htmlFor="priority">Mức độ ưu tiên</Label>
                     <Select onValueChange={(value) => setNewGoal(prev => ({ ...prev, priority: value }))}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Medium" />
+                        <SelectValue placeholder="Trung bình" />
                       </SelectTrigger>
                       <SelectContent>
                         {priorities.map(priority => (
                           <SelectItem key={priority} value={priority}>
-                            {priority.charAt(0).toUpperCase() + priority.slice(1)}
+                            {priorityTranslations[priority]}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -243,7 +253,7 @@ export const MyGoals = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   <div>
-                    <Label htmlFor="targetValue">Target</Label>
+                    <Label htmlFor="targetValue">Mục tiêu</Label>
                     <Input
                       id="targetValue"
                       type="number"
@@ -253,7 +263,7 @@ export const MyGoals = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="currentValue">Current</Label>
+                    <Label htmlFor="currentValue">Hiện tại</Label>
                     <Input
                       id="currentValue"
                       type="number"
@@ -263,17 +273,17 @@ export const MyGoals = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="unit">Unit</Label>
+                    <Label htmlFor="unit">Đơn vị</Label>
                     <Input
                       id="unit"
                       value={newGoal.unit}
                       onChange={(e) => setNewGoal(prev => ({ ...prev, unit: e.target.value }))}
-                      placeholder="lbs"
+                      placeholder="kg"
                     />
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="deadline">Deadline</Label>
+                  <Label htmlFor="deadline">Hạn chót</Label>
                   <Input
                     id="deadline"
                     type="date"
@@ -282,7 +292,7 @@ export const MyGoals = () => {
                   />
                 </div>
                 <Button onClick={handleAddGoal} className="w-full">
-                  Create Goal
+                  Tạo mục tiêu
                 </Button>
               </div>
             </DialogContent>
@@ -299,7 +309,7 @@ export const MyGoals = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{goals.filter(g => g.status === "active").length}</p>
-                  <p className="text-sm text-muted-foreground">Active Goals</p>
+                  <p className="text-sm text-muted-foreground">Mục tiêu đang thực hiện</p>
                 </div>
               </div>
             </CardContent>
@@ -313,7 +323,7 @@ export const MyGoals = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{goals.filter(g => g.status === "completed").length}</p>
-                  <p className="text-sm text-muted-foreground">Completed</p>
+                  <p className="text-sm text-muted-foreground">Đã hoàn thành</p>
                 </div>
               </div>
             </CardContent>
@@ -329,7 +339,7 @@ export const MyGoals = () => {
                   <p className="text-2xl font-bold">
                     {Math.round(goals.filter(g => g.status === "active").reduce((acc, goal) => acc + getProgressPercentage(goal), 0) / goals.filter(g => g.status === "active").length || 0)}%
                   </p>
-                  <p className="text-sm text-muted-foreground">Avg Progress</p>
+                  <p className="text-sm text-muted-foreground">Tiến độ TB</p>
                 </div>
               </div>
             </CardContent>
@@ -345,7 +355,7 @@ export const MyGoals = () => {
                   <p className="text-2xl font-bold">
                     {goals.filter(g => g.status === "active" && getDaysRemaining(g.deadline) <= 30).length}
                   </p>
-                  <p className="text-sm text-muted-foreground">Due Soon</p>
+                  <p className="text-sm text-muted-foreground">Sắp đến hạn</p>
                 </div>
               </div>
             </CardContent>
@@ -354,15 +364,15 @@ export const MyGoals = () => {
 
         {/* Filter Tabs */}
         <div className="flex space-x-1 mb-6 bg-muted p-1 rounded-lg w-fit">
-          {["active", "completed", "all"].map((status) => (
+          {statusFilters.map((status) => (
             <Button
-              key={status}
-              variant={filterStatus === status ? "default" : "ghost"}
+              key={status.id}
+              variant={filterStatus === status.id ? "default" : "ghost"}
               size="sm"
-              onClick={() => setFilterStatus(status)}
-              className={filterStatus === status ? "bg-background shadow-sm" : ""}
+              onClick={() => setFilterStatus(status.id)}
+              className={filterStatus === status.id ? "bg-background shadow-sm" : ""}
             >
-              {status.charAt(0).toUpperCase() + status.slice(1)}
+              {status.label}
             </Button>
           ))}
         </div>
@@ -382,15 +392,15 @@ export const MyGoals = () => {
         {filteredGoals.length === 0 && (
           <Card className="p-8 text-center">
             <Target className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Goals Found</h3>
+            <h3 className="text-lg font-semibold mb-2">Không tìm thấy mục tiêu</h3>
             <p className="text-muted-foreground mb-4">
               {filterStatus === "active" 
-                ? "Create your first fitness goal to start tracking your progress!"
-                : "No goals in this category yet."
+                ? "Tạo mục tiêu thể chất đầu tiên để bắt đầu theo dõi tiến trình của bạn!"
+                : "Chưa có mục tiêu nào trong danh mục này."
               }
             </p>
             <Button onClick={() => setIsAddDialogOpen(true)}>
-              Add Your First Goal
+              Thêm mục tiêu đầu tiên của bạn
             </Button>
           </Card>
         )}
@@ -448,8 +458,8 @@ const GoalCard = ({ goal, onDelete, onToggleComplete }: GoalCardProps) => {
               <CardTitle className={`text-lg ${goal.status === "completed" ? "line-through" : ""}`}>
                 {goal.title}
               </CardTitle>
-              <Badge className={`${getPriorityColor(goal.priority)} text-white text-xs`}>
-                {goal.priority}
+              <Badge className={`${getPriorityColor(goal.priority)} text-white text-xs capitalize`}>
+                {priorityTranslations[goal.priority]}
               </Badge>
             </div>
             <Badge variant="secondary" className="text-xs mb-2">
@@ -479,7 +489,7 @@ const GoalCard = ({ goal, onDelete, onToggleComplete }: GoalCardProps) => {
         {/* Progress */}
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
-            <span>Progress</span>
+            <span>Tiến độ</span>
             <span className="font-medium">{Math.round(progress)}%</span>
           </div>
           <Progress value={progress} className="h-2" />
@@ -491,13 +501,13 @@ const GoalCard = ({ goal, onDelete, onToggleComplete }: GoalCardProps) => {
 
         {/* Deadline */}
         <div className="flex items-center justify-between text-sm">
-          <span>Deadline:</span>
+          <span>Hạn chót:</span>
           <div className="flex items-center space-x-2">
             <span className={`${isOverdue ? "text-destructive" : isDueSoon ? "text-warning" : ""}`}>
               {new Date(goal.deadline).toLocaleDateString()}
             </span>
-            {isOverdue && <Badge className="bg-destructive text-white text-xs">Overdue</Badge>}
-            {isDueSoon && !isOverdue && <Badge className="bg-warning text-black text-xs">Due Soon</Badge>}
+            {isOverdue && <Badge className="bg-destructive text-white text-xs">Quá hạn</Badge>}
+            {isDueSoon && !isOverdue && <Badge className="bg-warning text-black text-xs">Sắp đến hạn</Badge>}
           </div>
         </div>
 
@@ -505,8 +515,8 @@ const GoalCard = ({ goal, onDelete, onToggleComplete }: GoalCardProps) => {
         {goal.status !== "completed" && (
           <div className="text-xs text-muted-foreground">
             {isOverdue 
-              ? `${Math.abs(daysRemaining)} days overdue`
-              : `${daysRemaining} days remaining`
+              ? `${Math.abs(daysRemaining)} ngày quá hạn`
+              : `${daysRemaining} ngày còn lại`
             }
           </div>
         )}
@@ -523,10 +533,10 @@ const GoalCard = ({ goal, onDelete, onToggleComplete }: GoalCardProps) => {
           {goal.status === "completed" ? (
             <>
               <CheckCircle className="h-4 w-4 mr-2" />
-              Completed
+              Đã hoàn thành
             </>
           ) : (
-            "Mark as Complete"
+            "Đánh dấu đã hoàn thành"
           )}
         </Button>
       </CardContent>

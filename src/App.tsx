@@ -33,6 +33,10 @@ import {ForgotPassword} from "@/components/auth/ForgotPassword";
 import { VerifyEmail } from "@/components/auth/VerifyEmail";
 import { TwoFactor } from "@/components/auth/TwoFactor";
 
+
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -68,6 +72,10 @@ const App = () => (
               <Route path="/settings" element={<Settings />} />
               {/* <Route path="/settings" element={<SettingsPage />} /> */}
 
+
+
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

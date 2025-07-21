@@ -18,8 +18,8 @@ const mockConversations = [
       avatar: "/placeholder.svg",
       isOnline: true
     },
-    lastMessage: "Great workout today! 💪",
-    timestamp: "2 min ago",
+    lastMessage: "Buổi tập hôm nay tuyệt vời! 💪",
+    timestamp: "2 phút trước",
     unreadCount: 2,
     isActive: true
   },
@@ -31,8 +31,8 @@ const mockConversations = [
       avatar: "/placeholder.svg",
       isOnline: false
     },
-    lastMessage: "Thanks for the form tips!",
-    timestamp: "1 hour ago",
+    lastMessage: "Cảm ơn vì đã chỉ dẫn form nhé!",
+    timestamp: "1 giờ trước",
     unreadCount: 0,
     isActive: false
   },
@@ -44,8 +44,8 @@ const mockConversations = [
       avatar: "/placeholder.svg",
       isOnline: true
     },
-    lastMessage: "The yoga session was amazing",
-    timestamp: "3 hours ago",
+    lastMessage: "Buổi tập yoga thật tuyệt vời",
+    timestamp: "3 giờ trước",
     unreadCount: 1,
     isActive: false
   },
@@ -57,8 +57,8 @@ const mockConversations = [
       avatar: "/placeholder.svg",
       isOnline: false
     },
-    lastMessage: "See you at the gym tomorrow",
-    timestamp: "1 day ago",
+    lastMessage: "Hẹn gặp bạn ở phòng gym ngày mai",
+    timestamp: "1 ngày trước",
     unreadCount: 0,
     isActive: false
   }
@@ -68,36 +68,36 @@ const mockMessages = [
   {
     id: 1,
     senderId: 1,
-    text: "Hey! How was your workout today?",
-    timestamp: "10:30 AM",
+    text: "Này! Buổi tập hôm nay của bạn thế nào?",
+    timestamp: "10:30 SA",
     isOwn: false
   },
   {
     id: 2,
     senderId: "me",
-    text: "It was amazing! Did 45 minutes of HIIT",
-    timestamp: "10:32 AM",
+    text: "Tuyệt vời lắm! Mình đã tập HIIT 45 phút",
+    timestamp: "10:32 SA",
     isOwn: true
   },
   {
     id: 3,
     senderId: 1,
-    text: "That's awesome! I love HIIT workouts",
-    timestamp: "10:33 AM",
+    text: "Tuyệt thật! Mình rất thích các bài tập HIIT",
+    timestamp: "10:33 SA",
     isOwn: false
   },
   {
     id: 4,
     senderId: "me",
-    text: "Yeah! Want to join me tomorrow?",
-    timestamp: "10:35 AM",
+    text: "Yeah! Mai muốn tập cùng mình không?",
+    timestamp: "10:35 SA",
     isOwn: true
   },
   {
     id: 5,
     senderId: 1,
-    text: "Great workout today! 💪",
-    timestamp: "Just now",
+    text: "Buổi tập hôm nay tuyệt vời! 💪",
+    timestamp: "Vừa xong",
     isOwn: false
   }
 ];
@@ -129,11 +129,11 @@ export const Messages = () => {
           {/* Conversations List */}
           <div className="w-full md:w-80 bg-card border-r border-border">
             <div className="p-4 border-b border-border">
-              <h2 className="text-xl font-semibold mb-4">Messages</h2>
+              <h2 className="text-xl font-semibold mb-4">Tin nhắn</h2>
               <div className="relative">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search conversations..."
+                  placeholder="Tìm kiếm cuộc trò chuyện..."
                   className="pl-10"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -206,7 +206,7 @@ export const Messages = () => {
                   <div>
                     <h3 className="font-medium">{selectedConversation.user.name}</h3>
                     <p className="text-sm text-muted-foreground">
-                      {selectedConversation.user.isOnline ? 'Active now' : 'Last seen 2 hours ago'}
+                      {selectedConversation.user.isOnline ? 'Đang hoạt động' : 'Hoạt động 2 giờ trước'}
                     </p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export const Messages = () => {
                 </Button>
                 <div className="flex-1 relative">
                   <Input
-                    placeholder="Type a message..."
+                    placeholder="Nhập tin nhắn..."
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
@@ -285,8 +285,8 @@ export const Messages = () => {
           {/* Mobile placeholder */}
           <div className="flex-1 flex items-center justify-center md:hidden">
             <div className="text-center">
-              <h3 className="text-lg font-medium">Select a conversation</h3>
-              <p className="text-muted-foreground">Choose a conversation to start messaging</p>
+              <h3 className="text-lg font-medium">Chọn một cuộc trò chuyện</h3>
+              <p className="text-muted-foreground">Chọn một cuộc trò chuyện để bắt đầu nhắn tin</p>
             </div>
           </div>
         </main>

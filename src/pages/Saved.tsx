@@ -11,75 +11,75 @@ const mockSavedItems = [
   {
     id: 1,
     type: "workout",
-    title: "Full Body HIIT Blast",
-    description: "30-minute high-intensity workout to burn calories and build strength",
+    title: "HIIT Toàn Thân Đốt Mỡ",
+    description: "Bài tập cường độ cao 30 phút để đốt calo và xây dựng sức mạnh",
     author: "Sarah Johnson",
     authorHandle: "@sarahfit",
     authorAvatar: "/placeholder.svg",
-    duration: "30 min",
-    difficulty: "Intermediate",
+    duration: "30 phút",
+    difficulty: "Trung cấp",
     savedDate: "2024-01-15",
     thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300",
-    tags: ["HIIT", "Full Body", "Cardio"],
+    tags: ["HIIT", "Toàn thân", "Cardio"],
     rating: 4.8
   },
   {
     id: 2,
     type: "nutrition",
-    title: "High Protein Breakfast Bowl",
-    description: "Delicious and nutritious breakfast recipe with 35g protein",
+    title: "Tô Bữa Sáng Giàu Protein",
+    description: "Công thức bữa sáng ngon và bổ dưỡng với 35g protein",
     author: "Mike Chen",
     authorHandle: "@mikenutrition",
     authorAvatar: "/placeholder.svg",
-    prepTime: "15 min",
-    calories: "420 kcal",
+    prepTime: "15 phút",
+    calories: "420 calo",
     savedDate: "2024-01-14",
     thumbnail: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300",
-    tags: ["High Protein", "Breakfast", "Quick"],
+    tags: ["Giàu Protein", "Bữa sáng", "Nhanh"],
     rating: 4.6
   },
   {
     id: 3,
     type: "article",
-    title: "The Science of Progressive Overload",
-    description: "Understanding how to continuously challenge your muscles for growth",
+    title: "Khoa Học Về Tăng Tiến Quá Tải",
+    description: "Hiểu cách liên tục thử thách cơ bắp để phát triển",
     author: "Dr. Emma Wilson",
     authorHandle: "@dremmafit",
     authorAvatar: "/placeholder.svg",
-    readTime: "8 min read",
+    readTime: "8 phút đọc",
     savedDate: "2024-01-12",
     thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300",
-    tags: ["Science", "Strength Training", "Education"],
+    tags: ["Khoa học", "Tập sức mạnh", "Giáo dục"],
     rating: 4.9
   },
   {
     id: 4,
     type: "workout",
-    title: "Morning Yoga Flow",
-    description: "Gentle 20-minute yoga sequence to start your day with mindfulness",
+    title: "Yoga Chào Buổi Sáng",
+    description: "Chuỗi yoga nhẹ nhàng 20 phút để bắt đầu ngày mới với chánh niệm",
     author: "Lisa Park",
     authorHandle: "@lisayoga",
     authorAvatar: "/placeholder.svg",
-    duration: "20 min",
-    difficulty: "Beginner",
+    duration: "20 phút",
+    difficulty: "Cơ bản",
     savedDate: "2024-01-10",
     thumbnail: "https://images.unsplash.com/photo-1506629905607-61b21050e5e9?w=300",
-    tags: ["Yoga", "Morning", "Flexibility"],
+    tags: ["Yoga", "Buổi sáng", "Linh hoạt"],
     rating: 4.7
   },
   {
     id: 5,
     type: "nutrition",
-    title: "Post-Workout Recovery Smoothie",
-    description: "Perfect blend of protein and carbs for muscle recovery",
+    title: "Sinh Tố Phục Hồi Sau Tập",
+    description: "Sự kết hợp hoàn hảo giữa protein và carb để phục hồi cơ bắp",
     author: "Alex Rodriguez",
     authorHandle: "@alexnutrition",
     authorAvatar: "/placeholder.svg",
-    prepTime: "5 min",
-    calories: "280 kcal",
+    prepTime: "5 phút",
+    calories: "280 calo",
     savedDate: "2024-01-08",
     thumbnail: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=300",
-    tags: ["Smoothie", "Recovery", "Post-Workout"],
+    tags: ["Sinh tố", "Phục hồi", "Sau tập"],
     rating: 4.5
   }
 ];
@@ -125,9 +125,9 @@ export const Saved = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Saved Items</h1>
+          <h1 className="text-3xl font-bold mb-2">Mục đã lưu</h1>
           <p className="text-muted-foreground">
-            Your collection of workouts, recipes, and articles
+            Bộ sưu tập các bài tập, công thức và bài viết của bạn
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export const Saved = () => {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search saved items..."
+              placeholder="Tìm kiếm trong các mục đã lưu..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -144,17 +144,17 @@ export const Saved = () => {
           </div>
           <Button variant="outline" className="flex items-center gap-2">
             <Filter className="h-4 w-4" />
-            Sort by Date
+            Sắp xếp theo ngày
           </Button>
         </div>
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="all">All ({savedItems.length})</TabsTrigger>
-            <TabsTrigger value="workout">Workouts ({savedItems.filter(i => i.type === "workout").length})</TabsTrigger>
-            <TabsTrigger value="nutrition">Nutrition ({savedItems.filter(i => i.type === "nutrition").length})</TabsTrigger>
-            <TabsTrigger value="article">Articles ({savedItems.filter(i => i.type === "article").length})</TabsTrigger>
+            <TabsTrigger value="all">Tất cả ({savedItems.length})</TabsTrigger>
+            <TabsTrigger value="workout">Bài tập ({savedItems.filter(i => i.type === "workout").length})</TabsTrigger>
+            <TabsTrigger value="nutrition">Dinh dưỡng ({savedItems.filter(i => i.type === "nutrition").length})</TabsTrigger>
+            <TabsTrigger value="article">Bài viết ({savedItems.filter(i => i.type === "article").length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value={activeTab} className="mt-6">
@@ -172,15 +172,15 @@ export const Saved = () => {
               <Card className="p-8 text-center">
                 <Bookmark className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">
-                  {searchTerm ? "No Results Found" : "No Saved Items Yet"}
+                  {searchTerm ? "Không tìm thấy kết quả" : "Chưa có mục nào được lưu"}
                 </h3>
                 <p className="text-muted-foreground mb-4">
                   {searchTerm 
-                    ? "Try adjusting your search terms" 
-                    : "Start saving workouts, recipes, and articles you love!"
+                    ? "Hãy thử điều chỉnh các từ khóa tìm kiếm của bạn" 
+                    : "Bắt đầu lưu các bài tập, công thức và bài viết bạn yêu thích!"
                   }
                 </p>
-                {!searchTerm && <Button>Explore Content</Button>}
+                {!searchTerm && <Button>Khám phá nội dung</Button>}
               </Card>
             )}
           </TabsContent>
@@ -209,17 +209,17 @@ const SavedItemCard = ({ item, onRemove }: SavedItemCardProps) => {
     switch (item.type) {
       case "workout":
         return [
-          { label: "Duration", value: item.duration, icon: Clock },
-          { label: "Level", value: item.difficulty }
+          { label: "Thời lượng", value: item.duration, icon: Clock },
+          { label: "Cấp độ", value: item.difficulty }
         ];
       case "nutrition":
         return [
-          { label: "Prep Time", value: item.prepTime, icon: Clock },
-          { label: "Calories", value: item.calories }
+          { label: "Thời gian chuẩn bị", value: item.prepTime, icon: Clock },
+          { label: "Calo", value: item.calories }
         ];
       case "article":
         return [
-          { label: "Read Time", value: item.readTime, icon: Clock }
+          { label: "Thời gian đọc", value: item.readTime, icon: Clock }
         ];
       default:
         return [];
@@ -237,12 +237,10 @@ const SavedItemCard = ({ item, onRemove }: SavedItemCardProps) => {
           
           {/* Type Badge */}
           <div className="absolute top-3 left-3">
-            <Badge className={`${getTypeColor(item.type)} text-white`}>
-              {getItemMetrics()[0]?.icon && <Clock className="h-3 w-3 mr-1" />}
-              {item.type === "workout" && "🏋️"}
-              {item.type === "nutrition" && "🥗"}
-              {item.type === "article" && "📖"}
-              {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+            <Badge className={`${getTypeColor(item.type)} text-white capitalize`}>
+              {item.type === "workout" && "Bài tập"}
+              {item.type === "nutrition" && "Dinh dưỡng"}
+              {item.type === "article" && "Bài viết"}
             </Badge>
           </div>
 
@@ -330,7 +328,7 @@ const SavedItemCard = ({ item, onRemove }: SavedItemCardProps) => {
 
         {/* Saved Date */}
         <div className="text-xs text-muted-foreground">
-          Saved on {new Date(item.savedDate).toLocaleDateString()}
+          Đã lưu vào {new Date(item.savedDate).toLocaleDateString()}
         </div>
       </CardContent>
     </Card>

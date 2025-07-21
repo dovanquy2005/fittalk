@@ -9,11 +9,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const mockAchievements = [
   {
     id: 1,
-    title: "First Workout",
-    description: "Complete your first workout",
+    title: "Buổi tập đầu tiên",
+    description: "Hoàn thành buổi tập đầu tiên của bạn",
     icon: "🏃",
     type: "milestone",
-    category: "Workout",
+    category: "Tập luyện",
     isUnlocked: true,
     unlockedDate: "2024-01-01",
     rarity: "common",
@@ -21,11 +21,11 @@ const mockAchievements = [
   },
   {
     id: 2,
-    title: "Week Warrior",
-    description: "Complete 7 workouts in a week",
+    title: "Chiến binh tuần",
+    description: "Hoàn thành 7 buổi tập trong một tuần",
     icon: "💪",
     type: "streak",
-    category: "Consistency",
+    category: "Kiên trì",
     isUnlocked: true,
     unlockedDate: "2024-01-08",
     rarity: "uncommon",
@@ -33,11 +33,11 @@ const mockAchievements = [
   },
   {
     id: 3,
-    title: "Calorie Crusher",
-    description: "Burn 500 calories in a single workout",
+    title: "Kẻ hủy diệt Calo",
+    description: "Đốt 500 calo trong một buổi tập",
     icon: "🔥",
     type: "achievement",
-    category: "Performance",
+    category: "Hiệu suất",
     isUnlocked: true,
     unlockedDate: "2024-01-15",
     rarity: "rare",
@@ -45,11 +45,11 @@ const mockAchievements = [
   },
   {
     id: 4,
-    title: "30-Day Challenge",
-    description: "Work out for 30 consecutive days",
+    title: "Thử thách 30 ngày",
+    description: "Tập luyện trong 30 ngày liên tiếp",
     icon: "📅",
     type: "challenge",
-    category: "Consistency",
+    category: "Kiên trì",
     isUnlocked: false,
     progress: 18,
     target: 30,
@@ -58,11 +58,11 @@ const mockAchievements = [
   },
   {
     id: 5,
-    title: "Social Butterfly",
-    description: "Follow 10 fitness enthusiasts",
+    title: "Nhà ngoại giao",
+    description: "Theo dõi 10 người đam mê thể hình",
     icon: "👥",
     type: "social",
-    category: "Community",
+    category: "Cộng đồng",
     isUnlocked: true,
     unlockedDate: "2024-01-20",
     rarity: "common",
@@ -70,11 +70,11 @@ const mockAchievements = [
   },
   {
     id: 6,
-    title: "Early Bird",
-    description: "Complete 5 morning workouts",
+    title: "Chim dậy sớm",
+    description: "Hoàn thành 5 buổi tập buổi sáng",
     icon: "🌅",
     type: "habit",
-    category: "Lifestyle",
+    category: "Lối sống",
     isUnlocked: false,
     progress: 3,
     target: 5,
@@ -83,27 +83,27 @@ const mockAchievements = [
   },
   {
     id: 7,
-    title: "Strength Master",
-    description: "Increase your max lift by 50lbs",
+    title: "Bậc thầy sức mạnh",
+    description: "Tăng mức tạ tối đa thêm 22kg",
     icon: "🏋️",
     type: "progress",
-    category: "Strength",
+    category: "Sức mạnh",
     isUnlocked: false,
-    progress: 35,
-    target: 50,
+    progress: 15,
+    target: 22,
     rarity: "rare",
     points: 200
   },
   {
     id: 8,
-    title: "Marathon Mindset",
-    description: "Run a total of 26.2 miles",
+    title: "Tinh thần Marathon",
+    description: "Chạy tổng cộng 42km",
     icon: "🏃‍♂️",
     type: "cumulative",
     category: "Cardio",
     isUnlocked: false,
-    progress: 18.5,
-    target: 26.2,
+    progress: 30,
+    target: 42,
     rarity: "epic",
     points: 300
   }
@@ -127,6 +127,14 @@ const rarityColors = {
   rare: "bg-blue-500",
   epic: "bg-purple-500",
   legendary: "bg-yellow-500"
+};
+
+const rarityTranslations: { [key: string]: string } = {
+  common: "Phổ biến",
+  uncommon: "Không phổ biến",
+  rare: "Hiếm",
+  epic: "Sử thi",
+  legendary: "Huyền thoại"
 };
 
 export const Achievements = () => {
@@ -163,9 +171,9 @@ export const Achievements = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Achievements</h1>
+          <h1 className="text-3xl font-bold mb-2">Thành tích</h1>
           <p className="text-muted-foreground">
-            Track your progress and celebrate your fitness milestones
+            Theo dõi tiến trình và ăn mừng các cột mốc thể chất của bạn
           </p>
         </div>
 
@@ -180,14 +188,14 @@ export const Achievements = () => {
                     <Star className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold">Level {mockStats.level}</p>
-                    <p className="text-sm opacity-80">Fitness Enthusiast</p>
+                    <p className="text-2xl font-bold">Cấp {mockStats.level}</p>
+                    <p className="text-sm opacity-80">Người đam mê thể hình</p>
                   </div>
                 </div>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span>Progress to Level {mockStats.level + 1}</span>
+                  <span>Tiến tới Cấp {mockStats.level + 1}</span>
                   <span>{mockStats.totalPoints % 100}/100 XP</span>
                 </div>
                 <Progress value={levelProgress} className="h-2 bg-white/20" />
@@ -204,7 +212,7 @@ export const Achievements = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{mockStats.unlockedAchievements}/{mockStats.totalAchievements}</p>
-                  <p className="text-sm text-muted-foreground">Achievements</p>
+                  <p className="text-sm text-muted-foreground">Thành tích</p>
                 </div>
               </div>
             </CardContent>
@@ -219,7 +227,7 @@ export const Achievements = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{mockStats.currentStreak}</p>
-                  <p className="text-sm text-muted-foreground">Day Streak</p>
+                  <p className="text-sm text-muted-foreground">Chuỗi ngày</p>
                 </div>
               </div>
             </CardContent>
@@ -234,7 +242,7 @@ export const Achievements = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{mockStats.totalPoints}</p>
-                  <p className="text-sm text-muted-foreground">Total Points</p>
+                  <p className="text-sm text-muted-foreground">Tổng điểm</p>
                 </div>
               </div>
             </CardContent>
@@ -246,22 +254,22 @@ export const Achievements = () => {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <TrendingUp className="h-5 w-5" />
-              <span>Your Progress</span>
+              <span>Tiến trình của bạn</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">{mockStats.totalWorkouts}</div>
-                <p className="text-sm text-muted-foreground">Total Workouts</p>
+                <p className="text-sm text-muted-foreground">Tổng số buổi tập</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-secondary mb-2">{mockStats.totalCaloriesBurned.toLocaleString()}</div>
-                <p className="text-sm text-muted-foreground">Calories Burned</p>
+                <p className="text-sm text-muted-foreground">Lượng calo đã đốt</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent mb-2">{mockStats.longestStreak}</div>
-                <p className="text-sm text-muted-foreground">Longest Streak</p>
+                <p className="text-sm text-muted-foreground">Chuỗi dài nhất</p>
               </div>
             </div>
           </CardContent>
@@ -269,14 +277,14 @@ export const Achievements = () => {
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-5 lg:w-fit lg:grid-cols-7">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="unlocked">Unlocked</TabsTrigger>
-            <TabsTrigger value="progress">In Progress</TabsTrigger>
-            <TabsTrigger value="workout">Workout</TabsTrigger>
-            <TabsTrigger value="consistency">Consistency</TabsTrigger>
-            <TabsTrigger value="community" className="hidden lg:flex">Community</TabsTrigger>
-            <TabsTrigger value="performance" className="hidden lg:flex">Performance</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-5 lg:w-fit lg:grid-cols-7 capitalize">
+            <TabsTrigger value="all">Tất cả</TabsTrigger>
+            <TabsTrigger value="unlocked">Đã mở khóa</TabsTrigger>
+            <TabsTrigger value="progress">Đang thực hiện</TabsTrigger>
+            <TabsTrigger value="workout">Tập luyện</TabsTrigger>
+            <TabsTrigger value="consistency">Kiên trì</TabsTrigger>
+            <TabsTrigger value="community" className="hidden lg:flex">Cộng đồng</TabsTrigger>
+            <TabsTrigger value="performance" className="hidden lg:flex">Hiệu suất</TabsTrigger>
           </TabsList>
 
           <TabsContent value={activeTab} className="mt-6">
@@ -291,9 +299,9 @@ export const Achievements = () => {
         {filteredAchievements.length === 0 && (
           <Card className="p-8 text-center">
             <Trophy className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Achievements Found</h3>
+            <h3 className="text-lg font-semibold mb-2">Không tìm thấy thành tích</h3>
             <p className="text-muted-foreground">
-              Keep working out to unlock more achievements!
+              Tiếp tục tập luyện để mở khóa thêm thành tích!
             </p>
           </Card>
         )}
@@ -351,7 +359,7 @@ const AchievementCard = ({ achievement }: AchievementCardProps) => {
                 <Badge 
                   className={`${rarityColors[achievement.rarity as keyof typeof rarityColors]} text-white text-xs`}
                 >
-                  {getRarityIcon(achievement.rarity)} {achievement.rarity}
+                  {getRarityIcon(achievement.rarity)} {rarityTranslations[achievement.rarity]}
                 </Badge>
                 <Badge variant="secondary" className="text-xs">
                   {achievement.category}
@@ -371,14 +379,14 @@ const AchievementCard = ({ achievement }: AchievementCardProps) => {
         {!achievement.isUnlocked && achievement.progress !== undefined && (
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span>Progress</span>
+              <span>Tiến độ</span>
               <span className="font-medium">
                 {achievement.progress}/{achievement.target}
               </span>
             </div>
             <Progress value={progress} className="h-2" />
             <div className="text-xs text-muted-foreground">
-              {Math.round(progress)}% complete
+              {Math.round(progress)}% hoàn thành
             </div>
           </div>
         )}
@@ -386,7 +394,7 @@ const AchievementCard = ({ achievement }: AchievementCardProps) => {
         {/* Unlocked Date */}
         {achievement.isUnlocked && achievement.unlockedDate && (
           <div className="text-xs text-muted-foreground">
-            Unlocked on {new Date(achievement.unlockedDate).toLocaleDateString()}
+            Đã mở khóa vào {new Date(achievement.unlockedDate).toLocaleDateString()}
           </div>
         )}
 
@@ -403,8 +411,8 @@ const AchievementCard = ({ achievement }: AchievementCardProps) => {
 
         {/* Share Button for Unlocked Achievements */}
         {achievement.isUnlocked && (
-          <Button variant="outline" size="sm" className="w-full">
-            Share Achievement
+          <Button variant="outline" size="sm" className="w-full capitalize">
+            Chia sẻ thành tích
           </Button>
         )}
       </CardContent>

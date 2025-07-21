@@ -15,91 +15,91 @@ import { MobileNavigation } from "@/components/layout/MobileNavigation";
 const mockMeals = [
   {
     id: 1,
-    name: "Grilled Chicken Salad",
+    name: "Salad Gà Nướng",
     category: "lunch",
     calories: 350,
     protein: 35,
     carbs: 15,
     fat: 18,
     prepTime: 15,
-    difficulty: "Easy",
+    difficulty: "Dễ",
     rating: 4.8,
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
-    ingredients: ["Chicken breast", "Mixed greens", "Cherry tomatoes", "Cucumber"],
-    instructions: ["Grill chicken breast", "Prepare salad", "Combine and serve"]
+    ingredients: ["Ức gà", "Rau xà lách trộn", "Cà chua bi", "Dưa chuột"],
+    instructions: ["Nướng ức gà", "Chuẩn bị salad", "Trộn đều và thưởng thức"]
   },
   {
     id: 2,
-    name: "Protein Smoothie Bowl",
+    name: "Tô Sinh Tố Protein",
     category: "breakfast",
     calories: 285,
     protein: 25,
     carbs: 32,
     fat: 8,
     prepTime: 10,
-    difficulty: "Easy",
+    difficulty: "Dễ",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400",
-    ingredients: ["Protein powder", "Banana", "Berries", "Granola"],
-    instructions: ["Blend ingredients", "Pour into bowl", "Add toppings"]
+    ingredients: ["Bột protein", "Chuối", "Các loại quả mọng", "Ngũ cốc Granola"],
+    instructions: ["Xay các nguyên liệu", "Đổ ra tô", "Thêm topping"]
   },
   {
     id: 3,
-    name: "Quinoa Power Bowl",
+    name: "Tô Năng Lượng Quinoa",
     category: "dinner",
     calories: 420,
     protein: 18,
     carbs: 65,
     fat: 12,
     prepTime: 25,
-    difficulty: "Medium",
+    difficulty: "Trung bình",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400",
-    ingredients: ["Quinoa", "Black beans", "Avocado", "Sweet potato"],
-    instructions: ["Cook quinoa", "Roast vegetables", "Assemble bowl"]
+    ingredients: ["Diêm mạch", "Đậu đen", "Bơ", "Khoai lang"],
+    instructions: ["Nấu diêm mạch", "Nướng rau củ", "Trình bày ra tô"]
   },
   {
     id: 4,
-    name: "Overnight Oats",
+    name: "Yến Mạch Qua Đêm",
     category: "breakfast",
     calories: 320,
     protein: 12,
     carbs: 48,
     fat: 10,
     prepTime: 5,
-    difficulty: "Easy",
+    difficulty: "Dễ",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1571197119282-621c26817a73?w=400",
-    ingredients: ["Oats", "Greek yogurt", "Chia seeds", "Berries"],
-    instructions: ["Mix ingredients", "Refrigerate overnight", "Enjoy cold"]
+    ingredients: ["Yến mạch", "Sữa chua Hy Lạp", "Hạt chia", "Các loại quả mọng"],
+    instructions: ["Trộn các nguyên liệu", "Để tủ lạnh qua đêm", "Thưởng thức lạnh"]
   }
 ];
 
 const mealPlans = [
   {
     id: 1,
-    name: "High Protein Plan",
-    description: "Perfect for muscle building and recovery",
-    duration: "7 days",
-    calories: "2200-2500/day",
+    name: "Kế Hoạch Giàu Protein",
+    description: "Hoàn hảo để xây dựng và phục hồi cơ bắp",
+    duration: "7 ngày",
+    calories: "2200-2500/ngày",
     meals: 21,
     rating: 4.8
   },
   {
     id: 2,
-    name: "Weight Loss Plan", 
-    description: "Balanced nutrition for healthy weight loss",
-    duration: "14 days",
-    calories: "1500-1800/day",
+    name: "Kế Hoạch Giảm Cân", 
+    description: "Dinh dưỡng cân bằng để giảm cân lành mạnh",
+    duration: "14 ngày",
+    calories: "1500-1800/ngày",
     meals: 42,
     rating: 4.6
   },
   {
     id: 3,
-    name: "Vegetarian Plan",
-    description: "Plant-based nutrition for optimal health",
-    duration: "7 days",
-    calories: "1800-2200/day",
+    name: "Kế Hoạch Ăn Chay",
+    description: "Dinh dưỡng từ thực vật cho sức khỏe tối ưu",
+    duration: "7 ngày",
+    calories: "1800-2200/ngày",
     meals: 21,
     rating: 4.7
   }
@@ -127,43 +127,43 @@ const Nutrition = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  Meals & Recipes
+                  Bữa ăn & Công thức
                 </h1>
                 <p className="text-muted-foreground mt-2">
-                  Discover healthy recipes and meal plans
+                  Khám phá các công thức và kế hoạch bữa ăn lành mạnh
                 </p>
               </div>
               <Dialog open={showAddMeal} onOpenChange={setShowAddMeal}>
                 <DialogTrigger asChild>
                   <Button className="bg-gradient-primary hover:opacity-90">
                     <Plus className="mr-2 h-4 w-4" />
-                    Add Recipe
+                    Thêm công thức
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Add New Recipe</DialogTitle>
+                    <DialogTitle>Thêm công thức mới</DialogTitle>
                     <DialogDescription>
-                      Share your favorite healthy recipe with the community
+                      Chia sẻ công thức lành mạnh yêu thích của bạn với cộng đồng
                     </DialogDescription>
                   </DialogHeader>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="recipe-name">Recipe Name</Label>
-                      <Input id="recipe-name" placeholder="Enter recipe name" />
+                      <Label htmlFor="recipe-name">Tên công thức</Label>
+                      <Input id="recipe-name" placeholder="Nhập tên công thức" />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="prep-time">Prep Time (min)</Label>
+                        <Label htmlFor="prep-time">Thời gian chuẩn bị (phút)</Label>
                         <Input id="prep-time" type="number" placeholder="15" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="calories">Calories</Label>
+                        <Label htmlFor="calories">Lượng calo</Label>
                         <Input id="calories" type="number" placeholder="350" />
                       </div>
                     </div>
                     <Button className="w-full bg-gradient-primary hover:opacity-90">
-                      Save Recipe
+                      Lưu công thức
                     </Button>
                   </div>
                 </DialogContent>
@@ -177,7 +177,7 @@ const Nutrition = () => {
                   <div className="flex-1 relative">
                     <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                     <Input
-                      placeholder="Search recipes..."
+                      placeholder="Tìm kiếm công thức..."
                       className="pl-10"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
@@ -186,14 +186,14 @@ const Nutrition = () => {
                   <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                     <SelectTrigger className="w-full md:w-48">
                       <Filter className="mr-2 h-4 w-4" />
-                      <SelectValue placeholder="Category" />
+                      <SelectValue placeholder="Danh mục" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Categories</SelectItem>
-                      <SelectItem value="breakfast">Breakfast</SelectItem>
-                      <SelectItem value="lunch">Lunch</SelectItem>
-                      <SelectItem value="dinner">Dinner</SelectItem>
-                      <SelectItem value="snack">Snacks</SelectItem>
+                      <SelectItem value="all">Tất cả danh mục</SelectItem>
+                      <SelectItem value="breakfast">Bữa sáng</SelectItem>
+                      <SelectItem value="lunch">Bữa trưa</SelectItem>
+                      <SelectItem value="dinner">Bữa tối</SelectItem>
+                      <SelectItem value="snack">Bữa phụ</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -202,8 +202,8 @@ const Nutrition = () => {
 
             <Tabs defaultValue="recipes" className="space-y-6">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="recipes">Recipes</TabsTrigger>
-                <TabsTrigger value="meal-plans">Meal Plans</TabsTrigger>
+                <TabsTrigger value="recipes">Công thức</TabsTrigger>
+                <TabsTrigger value="meal-plans">Kế hoạch bữa ăn</TabsTrigger>
               </TabsList>
 
               <TabsContent value="recipes" className="space-y-6">
@@ -219,13 +219,13 @@ const Nutrition = () => {
                         />
                         <div className="absolute top-3 right-3">
                           <Badge className="bg-black/50 text-white">
-                            {meal.calories} cal
+                            {meal.calories} calo
                           </Badge>
                         </div>
                         <div className="absolute top-3 left-3">
                           <Badge className={`${
-                            meal.difficulty === 'Easy' ? 'bg-green-500' :
-                            meal.difficulty === 'Medium' ? 'bg-yellow-500' : 'bg-red-500'
+                            meal.difficulty === 'Dễ' ? 'bg-green-500' :
+                            meal.difficulty === 'Trung bình' ? 'bg-yellow-500' : 'bg-red-500'
                           } text-white`}>
                             {meal.difficulty}
                           </Badge>
@@ -256,20 +256,20 @@ const Nutrition = () => {
                           <div className="grid grid-cols-3 gap-2 text-xs">
                             <div className="text-center p-2 bg-muted/50 rounded">
                               <div className="font-medium text-primary">{meal.protein}g</div>
-                              <div className="text-muted-foreground">Protein</div>
+                              <div className="text-muted-foreground">Đạm</div>
                             </div>
                             <div className="text-center p-2 bg-muted/50 rounded">
                               <div className="font-medium text-primary">{meal.carbs}g</div>
-                              <div className="text-muted-foreground">Carbs</div>
+                              <div className="text-muted-foreground">Carb</div>
                             </div>
                             <div className="text-center p-2 bg-muted/50 rounded">
                               <div className="font-medium text-primary">{meal.fat}g</div>
-                              <div className="text-muted-foreground">Fat</div>
+                              <div className="text-muted-foreground">Chất béo</div>
                             </div>
                           </div>
 
                           <Button className="w-full bg-gradient-primary hover:opacity-90">
-                            View Recipe
+                            Xem công thức
                           </Button>
                         </div>
                       </CardContent>
@@ -296,20 +296,20 @@ const Nutrition = () => {
                       <CardContent className="space-y-4">
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Duration:</span>
+                            <span className="text-muted-foreground">Thời lượng:</span>
                             <span className="font-medium">{plan.duration}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Calories:</span>
+                            <span className="text-muted-foreground">Lượng calo:</span>
                             <span className="font-medium">{plan.calories}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Total Meals:</span>
+                            <span className="text-muted-foreground">Tổng số bữa ăn:</span>
                             <span className="font-medium">{plan.meals}</span>
                           </div>
                         </div>
                         <Button className="w-full bg-gradient-primary hover:opacity-90">
-                          Start Plan
+                          Bắt đầu kế hoạch
                         </Button>
                       </CardContent>
                     </Card>

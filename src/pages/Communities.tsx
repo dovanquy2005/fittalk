@@ -10,75 +10,75 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const mockCommunities = [
   {
     id: 1,
-    name: "Weight Loss Warriors",
-    description: "A supportive community for those on their weight loss journey. Share tips, celebrate victories, and motivate each other!",
+    name: "Chiến Binh Giảm Cân",
+    description: "Một cộng đồng hỗ trợ cho những người đang trên hành trình giảm cân. Chia sẻ mẹo, ăn mừng chiến thắng và động viên lẫn nhau!",
     members: 12845,
     posts: 3421,
-    category: "Weight Loss",
+    category: "Giảm cân",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200",
     isJoined: false,
     trending: true,
-    recentActivity: "2 hours ago"
+    recentActivity: "2 giờ trước"
   },
   {
     id: 2,
-    name: "Strength Training Hub",
-    description: "For powerlifters, bodybuilders, and anyone looking to build strength. Form checks, program discussions, and PRs!",
+    name: "Trung Tâm Tập Luyện Sức Mạnh",
+    description: "Dành cho powerlifter, bodybuilder và bất kỳ ai muốn xây dựng sức mạnh. Kiểm tra form, thảo luận chương trình và các kỷ lục cá nhân (PR)!",
     members: 8932,
     posts: 2156,
-    category: "Strength",
+    category: "Sức mạnh",
     image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=200",
     isJoined: true,
     trending: false,
-    recentActivity: "1 hour ago"
+    recentActivity: "1 giờ trước"
   },
   {
     id: 3,
-    name: "Yoga & Mindfulness",
-    description: "Find your zen with fellow yogis. Share poses, meditation tips, and wellness wisdom.",
+    name: "Yoga & Chánh Niệm",
+    description: "Tìm kiếm sự tĩnh tại cùng các yogi. Chia sẻ tư thế, mẹo thiền và kiến thức về sức khỏe.",
     members: 15234,
     posts: 4567,
     category: "Yoga",
     image: "https://images.unsplash.com/photo-1506629905607-61b21050e5e9?w=200",
     isJoined: false,
     trending: true,
-    recentActivity: "30 minutes ago"
+    recentActivity: "30 phút trước"
   },
   {
     id: 4,
-    name: "Running Club",
-    description: "Lace up and join fellow runners! Training plans, race reports, and motivation for all distances.",
+    name: "Câu Lạc Bộ Chạy Bộ",
+    description: "Xỏ giày và tham gia cùng những người chạy bộ! Kế hoạch luyện tập, báo cáo cuộc đua và động lực cho mọi cự ly.",
     members: 6789,
     posts: 1890,
     category: "Cardio",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=200",
     isJoined: true,
     trending: false,
-    recentActivity: "4 hours ago"
+    recentActivity: "4 giờ trước"
   },
   {
     id: 5,
-    name: "Nutrition Science",
-    description: "Evidence-based nutrition discussions. Debunk myths, share research, and optimize your diet.",
+    name: "Khoa Học Dinh Dưỡng",
+    description: "Thảo luận về dinh dưỡng dựa trên bằng chứng. Vạch trần những lầm tưởng, chia sẻ nghiên cứu và tối ưu hóa chế độ ăn uống của bạn.",
     members: 4521,
     posts: 987,
-    category: "Nutrition",
+    category: "Dinh dưỡng",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200",
     isJoined: false,
     trending: false,
-    recentActivity: "6 hours ago"
+    recentActivity: "6 giờ trước"
   },
   {
     id: 6,
-    name: "Home Workout Heroes",
-    description: "No gym? No problem! Share home workout routines, equipment reviews, and space-saving tips.",
+    name: "Anh Hùng Tập Tại Nhà",
+    description: "Không có phòng gym? Không vấn đề! Chia sẻ các bài tập tại nhà, đánh giá thiết bị và mẹo tiết kiệm không gian.",
     members: 9876,
     posts: 2345,
-    category: "Home Fitness",
+    category: "Tập tại nhà",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200",
     isJoined: false,
     trending: true,
-    recentActivity: "1 hour ago"
+    recentActivity: "1 giờ trước"
   }
 ];
 
@@ -110,9 +110,9 @@ export const Communities = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Communities</h1>
+          <h1 className="text-3xl font-bold mb-2">Cộng đồng</h1>
           <p className="text-muted-foreground">
-            Connect with like-minded fitness enthusiasts and grow together
+            Kết nối với những người đam mê thể hình cùng chí hướng và cùng nhau phát triển
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export const Communities = () => {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search communities..."
+              placeholder="Tìm kiếm cộng đồng..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -129,20 +129,20 @@ export const Communities = () => {
           </div>
           <Button variant="outline" className="flex items-center gap-2">
             <Filter className="h-4 w-4" />
-            Filters
+            Bộ lọc
           </Button>
           <Button className="bg-gradient-primary text-white">
             <Plus className="h-4 w-4 mr-2" />
-            Create Community
+            Tạo cộng đồng
           </Button>
         </div>
 
         {/* Tabs */}
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="all">All Communities</TabsTrigger>
-            <TabsTrigger value="trending">Trending</TabsTrigger>
-            <TabsTrigger value="joined">My Communities</TabsTrigger>
+            <TabsTrigger value="all">Tất cả cộng đồng</TabsTrigger>
+            <TabsTrigger value="trending">Xu hướng</TabsTrigger>
+            <TabsTrigger value="joined">Cộng đồng của tôi</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-6">
@@ -186,11 +186,11 @@ export const Communities = () => {
             ) : (
               <Card className="p-8 text-center">
                 <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No Communities Yet</h3>
+                <h3 className="text-lg font-semibold mb-2">Chưa có cộng đồng nào</h3>
                 <p className="text-muted-foreground mb-4">
-                  Join some communities to connect with fellow fitness enthusiasts!
+                  Tham gia một vài cộng đồng để kết nối với những người đam mê thể hình!
                 </p>
-                <Button>Explore Communities</Button>
+                <Button>Khám phá cộng đồng</Button>
               </Card>
             )}
           </TabsContent>
@@ -224,7 +224,7 @@ const CommunityCard = ({ community, isJoined, onJoin }: CommunityCardProps) => {
                 {community.trending && (
                   <Badge className="bg-energy text-black text-xs">
                     <TrendingUp className="h-3 w-3 mr-1" />
-                    Trending
+                    Xu hướng
                   </Badge>
                 )}
               </CardTitle>
@@ -245,16 +245,16 @@ const CommunityCard = ({ community, isJoined, onJoin }: CommunityCardProps) => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Users className="h-4 w-4" />
-              <span>{community.members.toLocaleString()} members</span>
+              <span>{community.members.toLocaleString()} thành viên</span>
             </div>
             <div>
-              {community.posts.toLocaleString()} posts
+              {community.posts.toLocaleString()} bài viết
             </div>
           </div>
         </div>
 
         <div className="text-xs text-muted-foreground">
-          Last activity: {community.recentActivity}
+          Hoạt động gần nhất: {community.recentActivity}
         </div>
 
         <Button
@@ -265,7 +265,7 @@ const CommunityCard = ({ community, isJoined, onJoin }: CommunityCardProps) => {
               : "bg-gradient-primary text-white hover:opacity-90"
           }`}
         >
-          {isJoined ? "Joined" : "Join Community"}
+          {isJoined ? "Đã tham gia" : "Tham gia cộng đồng"}
         </Button>
       </CardContent>
     </Card>
