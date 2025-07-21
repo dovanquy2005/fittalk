@@ -12,9 +12,9 @@ const Index = () => {
   const [currentView, setCurrentView] = useState<"feed" | "profile" | "settings">("feed");
 
 
-    if (showOnboarding) {
-    return <WelcomeFlow onComplete={() => setShowOnboarding(false)} />;
-    }
+  //  if (showOnboarding) {
+  //    return <WelcomeFlow onComplete={() => setShowOnboarding(false)} />;
+  //  }
 
   return (
       <div className="min-h-screen bg-background overflow-x-hidden">
