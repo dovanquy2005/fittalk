@@ -1,15 +1,18 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from "next-themes";
-import App from './App.tsx'
-import './index.css'
+import { HashRouter } from "react-router-dom"; // 🧠 THÊM DÒNG NÀY
+import App from './App.tsx';
+import './index.css';
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider
-    attribute="class"
-    defaultTheme="light"
-    enableSystem
-    disableTransitionOnChange
-  >
-    <App />
-  </ThemeProvider>
+  <HashRouter> {/* 🧠 BỌC LẠI */}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <App />
+    </ThemeProvider>
+  </HashRouter>
 );
